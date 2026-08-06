@@ -12,7 +12,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 # --- 1. CONFIGURATION ---
 SECRET_KEY = "rescover-super-secret-key-2026"
 ALGORITHM = "HS256"
-MONGO_URL = os.getenv("mongodb+srv://masterbright02_db_user:Bright2026@rescover.ymtcvni.mongodb.net/?appName=Rescover", "mongodb://localhost:27017")
+MONGO_URL = os.getenv("MONGO_URL","mongodb+srv://masterbright02_db_user:Bright2026@rescover.ymtcvni.mongodb.net/?appName=Rescover")
 
 app = FastAPI(title="Rescover API - Dynamic Engine")
 
@@ -38,8 +38,8 @@ async def connect_to_mongo():
         await db_helper.client.admin.command('ping')
         db_helper.db = db_helper.client.rescover_db
         print("✅ SUCCESS: MongoDB is Connected and Ready!")
-    except Exception as e:
-        print("❌ ERROR: MONGODB IS NOT RUNNING!")
+   except Exception as e:
+        print(f"❌ ERROR: MONGODB IS NOT RUNNING! The real reason is: {e}")
         db_helper.db = None
 
 # --- 3. SECURITY & DATA MODELS ---
