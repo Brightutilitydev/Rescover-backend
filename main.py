@@ -19,7 +19,7 @@ app = FastAPI(title="Rescover API - Dynamic Engine")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://rescover-frontend.vercel.app/"], # Changed to allow any frontend URL
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
