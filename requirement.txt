@@ -6,3 +6,4 @@ PyJWT
 pydantic
 email-validator
 websockets
+dnspython
