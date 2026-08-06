@@ -12,14 +12,14 @@ from motor.motor_asyncio import AsyncIOMotorClient
 # --- 1. CONFIGURATION ---
 SECRET_KEY = "rescover-super-secret-key-2026"
 ALGORITHM = "HS256"
-MONGO_URL = os.getenv("mongodb+srv://masterbright02_db_user:TWTPjZD0vbktVe6M@rescover.ymtcvni.mongodb.net/?appName=Rescover", "mongodb://localhost:27017")
+MONGO_URL = os.getenv("mongodb+srv://masterbright02_db_user:Bright2026@rescover.ymtcvni.mongodb.net/?appName=Rescover", "mongodb://localhost:27017")
 
 app = FastAPI(title="Rescover API - Dynamic Engine")
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://rescover-frontend.vercel.app/"], # Changed to allow any frontend URL
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
