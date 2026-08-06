@@ -12,7 +12,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 # --- 1. CONFIGURATION ---
 SECRET_KEY = "rescover-super-secret-key-2026"
 ALGORITHM = "HS256"
-MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://masterbright02_db_user:Bright2026@rescover.ymtcvni.mongodb.net/?appName=Rescover")
+MONGO_URL = os.getenv("MONGO_URL", "mongodb+srv://masterbright02_db_user:Bright2026@rescover.ymtcvni.mongodb.net")
 
 app = FastAPI(title="Rescover API - Dynamic Engine")
 
