@@ -18,7 +18,10 @@ app = FastAPI(title="Rescover API - Dynamic Engine")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://rescover-frontend.vercel.app/"], # Changed to allow any frontend URL
+    allow_origins=[
+        "https://rescover-frontend.vercel.app", 
+        "http://localhost:5173"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,7 +41,7 @@ async def connect_to_mongo():
         await db_helper.client.admin.command('ping')
         db_helper.db = db_helper.client.rescover_db
         print("✅ SUCCESS: MongoDB is Connected and Ready!")
-   except Exception as e:
+    except Exception as e:
         print(f"❌ ERROR: MONGODB IS NOT RUNNING! The real reason is: {e}")
         db_helper.db = None
 
