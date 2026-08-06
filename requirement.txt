@@ -1,9 +1,0 @@
-fastapi
-uvicorn
-motor
-bcrypt
-PyJWT
-pydantic
-email-validator
-websockets
-dnspython
